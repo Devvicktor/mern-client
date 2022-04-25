@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Main from "./views/Main";
+import PetDetail from "./components/PetDetail";
+import PetUpdate from "./components/PetUpdate";
+import PetForm from "./components/PetForm";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='/pets/new' element={<PetForm />} />
+          <Route path='/pet/:id' element={<PetDetail />} />
+          <Route path='/pet/update/:id' element={<PetUpdate />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
