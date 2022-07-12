@@ -21,7 +21,7 @@ const PetForm = () => {
     };
     console.log("newPet", newPet);
     axios
-      .post("http://localhost:8000/api/pets", newPet)
+      .post("http://localhost:8000/api/v1/pets", newPet)
       .then((res) => navigate("/"))
       .catch((err) => {
         console.log("ERR", err.response.data.errors);

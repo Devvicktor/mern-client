@@ -10,14 +10,14 @@ const PetDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/pets/${id}`)
+      .get(`http://localhost:8000/api/v1/pets/${id}`)
       .then((res) => setPet(res.data))
       .catch((err) => console.log(err));
   }, []);
   const handleAdopt = () => {
     //axios delete
     axios
-      .delete(`http://localhost:8000/api/pets/${id}`)
+      .delete(`http://localhost:8000/api/v1/pets/${id}`)
       .then((res) => navigate("/"))
       .catch((err) => console.log(err));
   };

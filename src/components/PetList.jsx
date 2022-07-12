@@ -6,7 +6,7 @@ import axios from "axios";
 const PetList = ({ pets, setPets }) => {
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/pets")
+      .get("http://localhost:8000/api/v1/pets")
       .then((res) => setPets(res.data))
       .catch((err) => console.log(err));
   }, []);

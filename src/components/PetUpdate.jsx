@@ -10,7 +10,7 @@ const PetUpdate = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/pets/${id}`)
+      .get(`http://localhost:8000/api/v1/pets/${id}`)
       .then((res) => setPet(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -25,7 +25,7 @@ const PetUpdate = () => {
     console.log("updatePet", updatePet);
 
     axios
-      .put(`http://localhost:8000/api/pets/${id}`, pet)
+      .put(`http://localhost:8000/api/v1/pets/${id}`, pet)
       .then((res) => navigate("/"))
       .catch((err) => console.log(err));
   };
